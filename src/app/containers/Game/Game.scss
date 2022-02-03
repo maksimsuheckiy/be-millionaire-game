@@ -1,0 +1,113 @@
+@import "../../../assets/variables";
+
+.game-wrapper {
+  background-color: #F5F5F7;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  width: 100%;
+  padding: 0 20px 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  @media screen and (max-width: 1240px) {
+    padding: 0 20px;
+  }
+
+  @media screen and (max-width: 480px) {
+    justify-content: space-between;
+    padding: 0;
+  }
+}
+
+.aside {
+  background-color: $light-color;
+  width: 100%;
+  max-width: 375px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 300px;
+  }
+
+  @media screen and (max-width: 767px) {
+    max-width: 250px;
+  }
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+
+  &.menu-content {
+    display: flex;
+    position: absolute;
+    top: 65px;
+    bottom: 0;
+    background-color: #F5F5F7;
+    max-width: 100%;
+
+    @media screen and (min-width: 480px) {
+      position: static;
+      background-color: $light-color;
+      max-width: 300px;
+    }
+  }
+}
+
+.question-box {
+  width: 100%;
+  max-width: 625px;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 525px;
+  }
+
+  &__text {
+    font-family: $main-font;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 37px;
+    color: $dark-color;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 28px;
+      line-height: 33px;
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    @media screen and (max-width: 576px) {
+      font-size: 20px;
+      line-height: 25px;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 18px;
+      line-height: 21px;
+      text-align: center;
+      padding: 0 20px;
+    }
+  }
+}
+
+.answer-container {
+  max-width: 845px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 480px) {
+    justify-content: center;
+    padding-bottom: 25px;
+  }
+}

@@ -1,0 +1,114 @@
+@import "../../../assets/variables";
+
+.answer-input {
+  //visibility: hidden;
+}
+
+.answer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 388px;
+  padding: 16px 0;
+
+  @media screen and (max-width: 1024px) {
+    padding: 4px 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    max-width: 288px;
+  }
+
+  @media screen and (max-width: 480px) {
+    max-width: 100%;
+  }
+
+  &:before {
+    content: '';
+    width: 17px;
+    border-bottom: 1px solid #D0D0D8;
+  }
+
+  &:after {
+    content: '';
+    width: 17px;
+    border-bottom: 1px solid #D0D0D8;
+  }
+
+  &__triangle {
+    width: 0;
+    height: 0;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-right: 21px solid #D0D0D8;
+    position: relative;
+    cursor: pointer;
+
+    @media screen and (max-width: 1024px) {
+      border-top: 28px solid transparent;
+      border-bottom: 28px solid transparent;
+    }
+
+    &:last-child {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__triangle:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-right: 21px solid $light-color;
+    position: absolute;
+    top: -35px;
+    left: 1px;
+
+    @media screen and (max-width: 1024px) {
+      border-top: 28px solid transparent;
+      border-bottom: 28px solid transparent;
+      top: -28px;
+    }
+
+    &:last-child {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.answer-content {
+  width: 100%;
+  height: 70px;
+  padding: 0 5px;
+  background-color: $light-color;
+  border-top: 1px solid #D0D0D8;
+  border-bottom: 1px solid #D0D0D8;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: $main-font;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  @media screen and (max-width: 1024px) {
+    height: 56px;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+  }
+
+  &__text {
+    color: $dark-color;
+  }
+
+  &__numbering {
+    display: block;
+    padding-right: 8px;
+    color: $base-color;
+    font-weight: 600;
+  }
+}
