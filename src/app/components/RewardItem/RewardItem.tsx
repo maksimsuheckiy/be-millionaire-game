@@ -1,6 +1,6 @@
 import React from "react";
-import './RewardItem.scss';
-import classNames from "classnames";
+import styles from './RewardItem.module.scss';
+import cls from "classnames";
 
 type Props = {
     text: string;
@@ -12,12 +12,12 @@ const RewardItem = (props: Props) => {
     const {text, isActive, isDisabled} = props;
 
     return (
-        <div className={classNames('reward', {'reward--active': isActive})}>
-            <div className={classNames('reward__triangle', {'triangle--active': isActive})}/>
-            <div className={classNames('reward-text', {'reward--active': isActive}, {'reward--disabled': isDisabled})}>
+        <div className={cls(`${styles.box}`, {[styles.active]: isActive})}>
+            <div className={cls(`${styles.triangle}`, {[styles.active]: isActive})}/>
+            <div className={cls(`${styles.text}`, {[styles.active]: isActive}, {[styles.disabled]: isDisabled})}>
                 {text}
             </div>
-            <div className={classNames('reward__triangle', {'triangle--active': isActive})}/>
+            <div className={cls(`${styles.triangle}`, {[styles.active]: isActive})}/>
         </div>
     )
 }

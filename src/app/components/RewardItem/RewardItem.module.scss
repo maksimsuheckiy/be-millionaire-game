@@ -1,6 +1,6 @@
 @import "../../../assets/variables";
 
-.reward {
+.box {
   display: flex;
   align-items: center;
   width: 100%;
@@ -21,7 +21,7 @@
     padding-bottom: 8px;
   }
 
-  &.reward--active {
+  &.active {
     &:before {
       border-color: $base-color;
     }
@@ -30,25 +30,17 @@
       border-color: $base-color;
     }
   }
+}
 
-  &__triangle {
-    width: 0;
-    height: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-right: 21px solid #D0D0D8;
-    position: relative;
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 21px solid #D0D0D8;
+  position: relative;
 
-    &:last-child {
-      transform: rotate(180deg);
-    }
-
-    &.triangle--active {
-      border-right-color: $base-color;
-    }
-  }
-
-  &__triangle:after {
+  &:after {
     content: '';
     width: 0;
     height: 0;
@@ -58,14 +50,18 @@
     position: absolute;
     top: -20px;
     left: 1px;
+  }
 
-    &:last-child {
-      transform: rotate(180deg);
-    }
+  &:last-child {
+    transform: rotate(180deg);
+  }
+
+  &.active {
+    border-right-color: $base-color;
   }
 }
 
-.reward-text {
+.text {
   border-top: 1px solid #D0D0D8;
   border-bottom: 1px solid #D0D0D8;
   background-color: $light-color;
@@ -97,13 +93,12 @@
     min-width: 240px;
   }
 
-  &.reward--active {
+  &.active {
     border-color: $base-color;
     color: $base-color;
   }
 
-  &.reward--disabled {
+  &.disabled {
     color: #D0D0D8;
   }
 }
-

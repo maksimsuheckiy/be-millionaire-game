@@ -1,146 +1,149 @@
-[
-  {
-    "question": "What is a sailor's striped clothing called?",
-    "answer": "vest",
-    "allAnswers": [
-      "vest",
-      "sweatshirt",
-      "T-shirt",
-      "peakless cap"
-    ],
-    "amount": "500",
-    "id": 1
-  },
-  {
-    "question": "How do tulips reproduce?",
-    "answer": "bulbs",
-    "allAnswers": [
-      "bulbs",
-      "carrots",
-      "beets",
-      "heads of cabbage"
-    ],
-    "amount": "1,000",
-    "id": 2
-  },
-  {
-    "question": "Where is the largest desert located?",
-    "answer": "in Antarctica",
-    "allAnswers": [
-      "in Antarctica",
-      "in Africa",
-      "in America",
-      "in Ukraine"
-    ],
-    "amount": "2,000",
-    "id": 3
-  },
-  {
-    "question": "The exhibition of which artist was visited by the heroine of the song \"Exhibit\" of the group \"Leningrad\"?",
-    "answer": "Van Gogh",
-    "allAnswers": [
-      "Van Gogh",
-      "Gauguin",
-      "Matisse",
-      "Renoir"
-    ],
-    "amount": "4,000",
-    "id": 4
-  },
-  {
-    "question": "In whom, according to the myth, the goddess Hera turned the hundred-eyed giant Argus?",
-    "answer": "in a peacock",
-    "allAnswers": [
-      "in a peacock",
-      "in a leopard",
-      "in a centaur",
-      "in whale"
-    ],
-    "amount": "8,000",
-    "id": 5
-  },
-  {
-    "question": "The object for which sports game in India was called the \"ball-flower\"?",
-    "answer": "badminton",
-    "allAnswers": [
-      "badminton",
-      "golf",
-      "field hockey",
-      "cricket"
-    ],
-    "amount": "16,000",
-    "id": 6
-  },
-  {
-    "question": "Which of these devices appeared later than the others?",
-    "answer": "multicooker",
-    "allAnswers": [
-      "multicooker",
-      "toaster",
-      "meat grinder",
-      "microwave oven"
-    ],
-    "amount": "32,000",
-    "id": 7
-  },
-  {
-    "question": "What style of performance does a medley relay usually start with?",
-    "answer": "on the back",
-    "allAnswers": [
-      "on the back",
-      "freestyle",
-      "breaststroke",
-      "butterfly"
-    ],
-    "amount": "64,000",
-    "id": 8
-  },
-  {
-    "question": "What did actress Jane Birkin like to wear in her purse instead of her purse?",
-    "answer": "in the basket",
-    "allAnswers": [
-      "in the basket",
-      "in a string bag",
-      "in a plastic bag",
-      "in a duffel bag"
-    ],
-    "amount": "125,000",
-    "id": 9
-  },
-  {
-    "question": "What did the new owners of Banksy's Morons (White) do with it after it was bought at auction?",
-    "answer": "burned",
-    "allAnswers": [
-      "burned",
-      "painted over",
-      "signed",
-      "buried in the ground"
-    ],
-    "amount": "250,000",
-    "id": 10
-  },
-  {
-    "question": "What are tips that are especially valued by tea pickers?",
-    "answer": "kidneys",
-    "allAnswers": [
-      "kidneys",
-      "leaves",
-      "flowers",
-      "stem parts"
-    ],
-    "amount": "500,000",
-    "id": 11
-  },
-  {
-    "question": "In which country was the Sun Drop gemstone found?",
-    "answer": "South Africa",
-    "allAnswers": [
-      "South Africa",
-      "Brazil",
-      "China",
-      "Australia"
-    ],
-    "amount": "1,000,000",
-    "id": 12
-  }
-]
+{
+  "currency": "$",
+  "questions": [
+    {
+      "question": "What is a sailor's striped clothing called?",
+      "answer": "vest",
+      "allAnswers": [
+        "vest",
+        "sweatshirt",
+        "T-shirt",
+        "peakless cap"
+      ],
+      "amount": "500",
+      "id": 1
+    },
+    {
+      "question": "How do tulips reproduce?",
+      "answer": "bulbs",
+      "allAnswers": [
+        "bulbs",
+        "carrots",
+        "beets",
+        "heads of cabbage"
+      ],
+      "amount": "1,000",
+      "id": 2
+    },
+    {
+      "question": "Where is the largest desert located?",
+      "answer": "in Antarctica",
+      "allAnswers": [
+        "in Antarctica",
+        "in Africa",
+        "in America",
+        "in Ukraine"
+      ],
+      "amount": "2,000",
+      "id": 3
+    },
+    {
+      "question": "The exhibition of which artist was visited by the heroine of the song \"Exhibit\" of the group \"Leningrad\"?",
+      "answer": "Van Gogh",
+      "allAnswers": [
+        "Van Gogh",
+        "Gauguin",
+        "Matisse",
+        "Renoir"
+      ],
+      "amount": "4,000",
+      "id": 4
+    },
+    {
+      "question": "In whom, according to the myth, the goddess Hera turned the hundred-eyed giant Argus?",
+      "answer": "in a peacock",
+      "allAnswers": [
+        "in a peacock",
+        "in a leopard",
+        "in a centaur",
+        "in whale"
+      ],
+      "amount": "8,000",
+      "id": 5
+    },
+    {
+      "question": "The object for which sports game in India was called the \"ball-flower\"?",
+      "answer": "badminton",
+      "allAnswers": [
+        "badminton",
+        "golf",
+        "field hockey",
+        "cricket"
+      ],
+      "amount": "16,000",
+      "id": 6
+    },
+    {
+      "question": "Which of these devices appeared later than the others?",
+      "answer": "multicooker",
+      "allAnswers": [
+        "multicooker",
+        "toaster",
+        "meat grinder",
+        "microwave oven"
+      ],
+      "amount": "32,000",
+      "id": 7
+    },
+    {
+      "question": "What style of performance does a medley relay usually start with?",
+      "answer": "on the back",
+      "allAnswers": [
+        "on the back",
+        "freestyle",
+        "breaststroke",
+        "butterfly"
+      ],
+      "amount": "64,000",
+      "id": 8
+    },
+    {
+      "question": "What did actress Jane Birkin like to wear in her purse instead of her purse?",
+      "answer": "in the basket",
+      "allAnswers": [
+        "in the basket",
+        "in a string bag",
+        "in a plastic bag",
+        "in a duffel bag"
+      ],
+      "amount": "125,000",
+      "id": 9
+    },
+    {
+      "question": "What did the new owners of Banksy's Morons (White) do with it after it was bought at auction?",
+      "answer": "burned",
+      "allAnswers": [
+        "burned",
+        "painted over",
+        "signed",
+        "buried in the ground"
+      ],
+      "amount": "250,000",
+      "id": 10
+    },
+    {
+      "question": "What are tips that are especially valued by tea pickers?",
+      "answer": "kidneys",
+      "allAnswers": [
+        "kidneys",
+        "leaves",
+        "flowers",
+        "stem parts"
+      ],
+      "amount": "500,000",
+      "id": 11
+    },
+    {
+      "question": "In which country was the Sun Drop gemstone found?",
+      "answer": "South Africa",
+      "allAnswers": [
+        "South Africa",
+        "Brazil",
+        "China",
+        "Australia"
+      ],
+      "amount": "1,000,000",
+      "id": 12
+    }
+  ]
+}

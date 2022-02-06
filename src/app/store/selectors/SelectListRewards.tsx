@@ -3,7 +3,10 @@ import {RootState} from "../store";
 
 export const SelectListRewards = createSelector(
     (state: RootState) => state.data.questions,
-    (questions) => {
-        return questions.map(question => `$${question.amount}`);
+    (state: RootState) => state.data.currency,
+    (questions, currency) => {
+        return questions.map(question => {
+            return `${currency}${question.amount}`
+        });
     }
 )

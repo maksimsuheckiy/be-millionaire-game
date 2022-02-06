@@ -1,13 +1,15 @@
-import {createAsyncThunk, createSlice, isAnyOf, isRejectedWithValue} from "@reduxjs/toolkit";
-import {InitialStateTypes} from "../../models/InitialData";
+import {createAsyncThunk, createSlice, isAnyOf, isRejectedWithValue, PayloadAction} from "@reduxjs/toolkit";
+import {InitialState} from "../../models/InitialDataTypes";
+import {AnswerData} from "../../models/ActionsTypes";
 
-const initialState: InitialStateTypes = {
+const initialState: InitialState = {
+    currency: "",
     questions: [],
     currentQuestion: {
         "question": '',
         "answer": '',
         "allAnswers": [],
-        "amount": null,
+        "amount": '',
         "id": 1,
     },
     winningReward: '',
@@ -27,11 +29,12 @@ export const GameSlice = createSlice({
     name: 'data',
     initialState,
     reducers: {
-        setNextAnswer(state, action) {
-            state.currentQuestion = state.questions[action.payload];
+        setNextAnswer(state, action: PayloadAction<AnswerData>) {
+            state.currentQuestion = state.questions[action.payload.id];
+            state.winningReward = action.payload.amount;
         },
-        setWinningReward(state, action) {
-            state.winningReward = action.payload;
+        setWinning(state, action: PayloadAction<{amount: string}>) {
+            state.winningReward = action.payload.amount;
         }
     },
     extraReducers: (builder) => {
@@ -47,8 +50,9 @@ export const GameSlice = createSlice({
                 isAnyOf(getData.fulfilled),
                 (state, action) => {
                     state.status = 'success'
-                    state.questions = action.payload;
-                    state.currentQuestion = action.payload[0];
+                    state.currency = action.payload.currency;
+                    state.questions = action.payload.questions;
+                    state.currentQuestion = action.payload.questions[0];
                 }
             )
             .addMatcher(
@@ -60,5 +64,5 @@ export const GameSlice = createSlice({
     }
 })
 
-export const { setNextAnswer, setWinningReward } = GameSlice.actions;
+export const { setNextAnswer, setWinning } = GameSlice.actions;
 export default GameSlice.reducer;

@@ -1,6 +1,6 @@
 @import "../../../assets/variables";
 
-.game-wrapper {
+.wrapper {
   background-color: #F5F5F7;
   height: 100vh;
   display: flex;
@@ -24,6 +24,14 @@
   }
 }
 
+.inner {
+  height: 100%;
+  max-height: 645px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .aside {
   background-color: $light-color;
   width: 100%;
@@ -45,7 +53,7 @@
     display: none;
   }
 
-  &.menu-content {
+  &.menu {
     display: flex;
     position: absolute;
     top: 65px;
@@ -61,46 +69,46 @@
   }
 }
 
-.question-box {
+.title-box {
   width: 100%;
   max-width: 625px;
 
   @media screen and (max-width: 1024px) {
     max-width: 525px;
   }
+}
 
-  &__text {
-    font-family: $main-font;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 37px;
-    color: $dark-color;
+.title {
+  font-family: $main-font;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 37px;
+  color: $dark-color;
 
-    @media screen and (max-width: 1024px) {
-      font-size: 28px;
-      line-height: 33px;
-    }
+  @media screen and (max-width: 1024px) {
+    font-size: 28px;
+    line-height: 33px;
+  }
 
-    @media screen and (max-width: 767px) {
-      font-size: 24px;
-      line-height: 29px;
-    }
+  @media screen and (max-width: 767px) {
+    font-size: 24px;
+    line-height: 29px;
+  }
 
-    @media screen and (max-width: 576px) {
-      font-size: 20px;
-      line-height: 25px;
-    }
+  @media screen and (max-width: 576px) {
+    font-size: 20px;
+    line-height: 25px;
+  }
 
-    @media screen and (max-width: 480px) {
-      font-size: 18px;
-      line-height: 21px;
-      text-align: center;
-      padding: 0 20px;
-    }
+  @media screen and (max-width: 480px) {
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    padding: 0 20px;
   }
 }
 
-.answer-container {
+.answers {
   max-width: 845px;
   display: flex;
   justify-content: flex-start;

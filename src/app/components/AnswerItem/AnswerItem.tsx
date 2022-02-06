@@ -1,5 +1,5 @@
 import React, {useRef} from "react";
-import './AnswerOptionItem.scss';
+import styles from './AnswerItem.module.scss';
 
 type Props = {
     text: string;
@@ -7,7 +7,7 @@ type Props = {
     onSelectAnswer: (answerVariant: string | null) => void;
 }
 
-const AnswerOptionItem = (props: Props) => {
+const AnswerItem = (props: Props) => {
     const {text, letterNumbering, onSelectAnswer} = props;
     const answerVariant = useRef<HTMLParagraphElement>(null);
 
@@ -18,15 +18,15 @@ const AnswerOptionItem = (props: Props) => {
     }
 
     return (
-        <div className="answer" onClick={handleClick}>
-            <div className="answer__triangle"/>
-            <div className="answer-content">
-                <span className="answer-content__numbering">{letterNumbering}</span>
-                <p className="answer-content__text" ref={answerVariant}>{text}</p>
+        <div className={styles.box} onClick={handleClick}>
+            <div className={styles.triangle}/>
+            <div className={styles.content}>
+                <span className={styles.numbering}>{letterNumbering}</span>
+                <p className={styles.text} ref={answerVariant}>{text}</p>
             </div>
-            <div className="answer__triangle"/>
+            <div className={styles.triangle}/>
         </div>
     )
 }
 
-export default AnswerOptionItem
+export default AnswerItem

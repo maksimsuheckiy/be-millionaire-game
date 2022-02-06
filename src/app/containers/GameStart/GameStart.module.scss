@@ -1,15 +1,26 @@
 @import "../../../assets/variables";
 
-.winning-wrapper {
+.wrapper {
   height: 100vh;
   padding: 0 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F5F5F7;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFF3EB;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  }
 }
 
-.winning-container {
+.container {
   position: relative;
   bottom: 75px;
   display: flex;
@@ -29,66 +40,41 @@
     flex-direction: column;
     bottom: 10px;
   }
+}
 
-  &__image-box {
-    padding-right: 32px;
+.image {
+  padding-right: 32px;
+  min-width: 288px;
 
-    @media screen and (min-width: 577px) and (max-width: 767px) {
-      padding-right: 0;
-    }
+  @media screen and (min-width: 577px) and (max-width: 767px) {
+    padding-right: 0;
+    max-width: 288px;
+  }
 
-    @media screen and (max-width: 576px) {
-      padding-right: 0;
-      padding-bottom: 24px;
-    }
-
-    &__picture {
-      min-width: 288px;
-
-      @media screen and (min-width: 577px) and (max-width: 767px) {
-        max-width: 288px;
-      }
-    }
+  @media screen and (max-width: 576px) {
+    padding-right: 0;
+    padding-bottom: 24px;
   }
 }
 
 .content {
-  width: 100%;
-  max-width: 520px;
+  max-width: 480px;
 
   @media screen and (max-width: 576px) {
     text-align: center;
   }
 
-  &__title {
-    font-family: $main-font;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 37px;
-    color: $dark-color;
-    opacity: 0.5;
-    padding-bottom: 8px;
-
-    @media screen and (max-width: 576px) {
-      text-align: center;
-    }
-
-    @media screen and (max-width: 480px) {
-      font-size: 18px;
-      line-height: 23px;
-    }
-  }
-
-  &__subtitle {
+  &__desc {
     font-family: $main-font;
     font-weight: 600;
     font-size: 56px;
+    line-height: 65px;
     color: $dark-color;
     padding-bottom: 64px;
 
     @media screen and (min-width: 768px) and (max-width: 1024px){
-      font-size: 41px;
-      line-height: 50px;
+      font-size: 47px;
+      line-height: 56px;
       padding-bottom: 45px;
     }
 
@@ -102,7 +88,6 @@
       font-size: 35px;
       line-height: 43px;
       padding-bottom: 50px;
-      text-align: center;
     }
 
     @media screen and (max-width: 480px) {

@@ -1,8 +1,8 @@
 import React from "react";
-import Game from "../containers/Game/Game";
-import GameStart from "../containers/GameStart/GameStart";
-import GameOver from "../containers/GameOver/GameOver";
-import NotFound from "../containers/NotFound/NotFound";
+import Game from "../../containers/Game/Game";
+import GameStart from "../../containers/GameStart/GameStart";
+import GameOver from "../../containers/GameOver/GameOver";
+import NotFound from "../../containers/NotFound/NotFound";
 
 const Routes = [
     {
@@ -20,7 +20,7 @@ const Routes = [
     },
     {
         path: "*",
-        component: () => <NotFound />
+        component: () => <NotFound/>
     }
 ]
 

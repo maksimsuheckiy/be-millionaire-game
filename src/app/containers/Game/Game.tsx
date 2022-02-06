@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch} from "react-redux";
 import {useHistory} from "react-router";
+import classNames from "classnames";
 import RewardItem from "../../components/RewardItem/RewardItem";
-import AnswerOptionItem from "../../components/AnswerOptionItem/AnswerOptionItem";
-import {getData, setNextAnswer, setWinningReward} from "../../store/reducers/GameSlice";
+import AnswerItem from "../../components/AnswerItem/AnswerItem";
+import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
+import {getData, setNextAnswer, setWinning} from "../../store/reducers/GameSlice";
 import {SelectListRewards} from "../../store/selectors/SelectListRewards";
 import {useAppSelector} from "../../store/hooks/redux";
 import {setLetterNumbering, shuffleArray} from '../../utils';
-import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
-import classNames from "classnames";
-import './Game.scss';
+import styles from './Game.module.scss';
 
 const Game = () => {
     const dispatch = useDispatch();
@@ -22,40 +22,42 @@ const Game = () => {
     const {question, amount, answer, allAnswers, id} = currentQuestion;
 
     useEffect(() => {
-        dispatch(getData())
+        dispatch(getData());
     }, [])
 
     useEffect(() => {
         const mixedArray = shuffleArray(allAnswers);
-        setAnswers(mixedArray)
-    }, [currentQuestion])
+        setAnswers(mixedArray);
+    }, [allAnswers])
 
     const handleSelectAnswer = (answerVariant: string | null) => {
         if (answerVariant === answer && id !== allQuestions.length) {
-            dispatch(setNextAnswer(id))
+            dispatch(setNextAnswer({id, amount}));
         } else {
-            dispatch(setWinningReward(amount));
+            if (id === allQuestions.length) dispatch(setWinning({amount}))
             history.push({pathname: '/game-over'})
         }
     }
 
     return (
-        <div className="game-wrapper">
-            <div className="main">
+        <div className={styles.wrapper}>
+            <div className={styles.main}>
                 <BurgerMenu onSetActive={setMenuActive} isActive={menuActive}/>
-                <div className="question-box">
-                    <p className="question-box__text">{question}</p>
-                </div>
-                <div className="answer-container">
-                    {answers.map((answer, index) => (
-                        <AnswerOptionItem key={index}
-                                          text={answer}
-                                          letterNumbering={setLetterNumbering(index)}
-                                          onSelectAnswer={handleSelectAnswer}/>
-                    ))}
+                <div className={styles.inner}>
+                    <div className={styles['title-box']}>
+                        <p className={styles.title}>{question}</p>
+                    </div>
+                    <div className={styles.answers}>
+                        {answers.map((answer, index) => (
+                            <AnswerItem key={index}
+                                        text={answer}
+                                        letterNumbering={setLetterNumbering(index)}
+                                        onSelectAnswer={handleSelectAnswer}/>
+                        ))}
+                    </div>
                 </div>
             </div>
-            <div className={classNames("aside", {'menu-content': menuActive})}>
+            <div className={classNames(`${styles.aside}`, {[styles.menu]: menuActive})}>
                 {listRewards.map((reward, index) => (
                     <RewardItem key={index}
                                 text={reward}
