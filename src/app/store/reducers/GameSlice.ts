@@ -35,6 +35,9 @@ export const GameSlice = createSlice({
         },
         setWinning(state, action: PayloadAction<{amount: string}>) {
             state.winningReward = action.payload.amount;
+        },
+        resetWinning(state) {
+            state.winningReward = '';
         }
     },
     extraReducers: (builder) => {
@@ -64,5 +67,5 @@ export const GameSlice = createSlice({
     }
 })
 
-export const { setNextAnswer, setWinning } = GameSlice.actions;
+export const { setNextAnswer, setWinning, resetWinning } = GameSlice.actions;
 export default GameSlice.reducer;
